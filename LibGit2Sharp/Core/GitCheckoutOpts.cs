@@ -3,8 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace LibGit2Sharp.Core
 {
+    /// <summary>
+    /// The flags controlling checkout behavior.
+    /// </summary>
     [Flags]
-    internal enum CheckoutStrategy
+    public enum CheckoutStrategy
     {
         /// <summary>
         /// Default is a dry run, no actual updates.

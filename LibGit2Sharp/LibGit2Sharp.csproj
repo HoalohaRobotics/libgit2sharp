@@ -24,6 +24,10 @@
     <MinVerBuildMetadata Condition="'$(libgit2_hash)' != ''">libgit2-$(libgit2_hash.Substring(0,7))</MinVerBuildMetadata>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <MinVerVersionOverride>0.31.9384-$([System.DateTime]::UtcNow.ToString("HHmmss"))</MinVerVersionOverride>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>

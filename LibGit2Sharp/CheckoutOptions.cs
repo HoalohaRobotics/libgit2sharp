@@ -34,11 +34,17 @@ namespace LibGit2Sharp
         {
             get
             {
-                return CheckoutModifiers.HasFlag(CheckoutModifiers.Force)
+                return CheckoutStrategy_AdditionalFlags | (CheckoutModifiers.HasFlag(CheckoutModifiers.Force)
                     ? CheckoutStrategy.GIT_CHECKOUT_FORCE
-                    : CheckoutStrategy.GIT_CHECKOUT_SAFE;
+                    : CheckoutStrategy.GIT_CHECKOUT_SAFE);
             }
         }
+
+        /// <summary>
+        /// Additional checkout strategy flags for advanced configuration.
+        /// These will be OR'd in with the ones set by the checkout modifiers
+        /// </summary>
+        public CheckoutStrategy CheckoutStrategy_AdditionalFlags { get; set; }
 
         /// <summary>
         /// Generate a <see cref="CheckoutCallbacks"/> object with the delegates
